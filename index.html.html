@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUR ONLINE CYBER CAFE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      min-height:100vh;
+      background:linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.9)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(10px);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:50px;
+      flex-wrap:wrap;
+      padding:60px 8%;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text span{
+      color:#38bdf8;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      font-size:18px;
+      margin-bottom:30px;
+      max-width:650px;
+    }
+
+    .btns{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border:none;
+      border-radius:12px;
+      cursor:pointer;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .primary{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .secondary{
+      background:transparent;
+      border:2px solid #38bdf8;
+      color:white;
+    }
+
+    .btn:hover,.service-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .hero-card{
+      flex:1;
+      min-width:300px;
+      background:rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:30px;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-card img{
+      width:100%;
+      border-radius:18px;
+      margin-bottom:20px;
+    }
+
+    .hero-card h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    section{
+      padding:90px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#cbd5e1;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .service-box{
+      background:#1e293b;
+      padding:30px;
+      border-radius:22px;
+      transition:0.3s;
+      border:1px solid transparent;
+    }
+
+    .service-box:hover{
+      border-color:#38bdf8;
+      transform:translateY(-8px);
+    }
+
+    .service-box h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+
+    .service-btn{
+      margin-top:20px;
+      background:#38bdf8;
+      color:#0f172a;
+      border:none;
+      padding:12px 20px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .about{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:40px;
+    }
+
+    .about img{
+      width:100%;
+      max-width:500px;
+      border-radius:25px;
+    }
+
+    .about-text{
+      flex:1;
+      min-width:280px;
+    }
+
+    .about-text h2{
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:15px;
+    }
+
+    .contact-box{
+      background:#1e293b;
+      border-radius:25px;
+      padding:40px;
+      text-align:center;
+    }
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:25px;
+      color:#94a3b8;
+    }
+
+    @media(max-width:900px){
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">YOUR ONLINE CYBER CAFE</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero" id="home">
+    <div class="hero-text">
+      <h1>Fast & Smart <span>Cyber Cafe</span> Services</h1>
+
+      <p>
+        Welcome to YOUR ONLINE CYBER CAFE — your one-stop solution for online forms, Aadhaar services, PAN card work, railway tickets and digital services.
+      </p>
+
+      <div class="btns">
+        <a href="#services" class="btn primary">Explore Services</a>
+        <a href="#contact" class="btn secondary">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1200&auto=format&fit=crop" alt="Cyber Cafe">
+      <h3>Modern Digital Solutions</h3>
+      <p>Online form filling, document services and much more.</p>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>Everything you need in one place</p>
+  </div>
+
+  <div class="services">
+    <div class="service-box">
+      <h3>APPLY FOR DOCUMENTS</h3>
+      <p>Apply for Aadhaar, PAN Card, Voter ID, Passport, Income Certificate and other important documents.</p>
+      <button class="service-btn" onclick="openDocumentsPage()">Open Services</button>
+    </div>
+
+    <div class="service-box">
+      <h3>ONLINE FORMS</h3>
+      <p>Fill online forms for jobs, scholarships, admissions, exams and registrations.</p>
+      <button class="service-btn" onclick="showOnlineForms()">Online Forms</button>
+
+      <div id="onlineFormsBox" style="display:none;margin-top:20px;padding:20px;background:#0f172a;border-radius:15px;">
+        <p style="font-size:18px;color:#38bdf8;font-weight:600;">
+          DM for Online forms.
+        </p>
+
+        <p style="margin-top:10px;font-size:17px;">
+          <svg xmlns="http://www.w3.org/2000/svg"
+width="22"
+height="22"
+viewBox="0 0 24 24"
+fill="#E1306C"
+style="vertical-align:middle;margin-right:8px;">
+<path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.33 4 20 5.67 20 7.75v8.5C20 18.33 18.33 20 16.25 20h-8.5C5.67 20 4 18.33 4 16.25v-8.5C4 5.67 5.67 4 7.75 4zm8.75 1a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+</svg>
+          hers__harshit_01
+        </p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <h3>CORRECTION IN FORM/DOCUMENTS</h3>
+      <p>Name correction, DOB correction, address update and editing support for forms and documents.</p>
+      <button class="service-btn" onclick="showCorrectionBox()">Correction Services</button>
+
+      <div id="correctionBox" style="display:none;margin-top:20px;padding:20px;background:#0f172a;border-radius:15px;">
+        <p style="font-size:18px;color:#38bdf8;font-weight:600;">
+          DM for Form/Document Corrections.
+        </p>
+
+        <p style="margin-top:10px;font-size:17px;">
+          <a href="https://www.instagram.com/hers__harshit_01/" target="_blank" style="color:white;text-decoration:none;display:flex;align-items:center;gap:8px;justify-content:center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="22">
+            hers__harshit_01
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+<div id="documentsSection" class="documents-section">
+  <h2 style="color:#38bdf8;margin-bottom:25px;">Apply For Documents</h2>
+
+  <div class="doc-buttons">
+    <button class="doc-btn" onclick="showForm('voterForm')">VOTER CARD</button>
+    <button class="doc-btn" onclick="showForm('panForm')">PAN CARD</button>
+    <button class="doc-btn" onclick="showForm('apaarForm')">APAAR ID</button>
+    <button class="doc-btn" onclick="showForm('rationForm')">RATION CARD</button>
+    <button class="doc-btn" onclick="showForm('certificateForm')">INCOME/CASTE/DOMICILE</button>
+  </div>
+
+  <div class="form-box" id="voterForm">
+    <h3>VOTER CARD</h3>
+    <ul>
+      <li>Aadhaar Card</li>
+      <li>Photo</li>
+      <li>Aadhaar Linked Mobile Number</li>
+      <li>Relative's Voter Card</li>
+    </ul>
+    <input type="text" id="voterName" placeholder="Full Name">
+    <input type="text" id="voterMobile" placeholder="Mobile Number">
+    <button class="submit-btn" onclick="submitVoterForm()">Submit</button>
+  </div>
+
+  <div class="form-box" id="panForm">
+    <h3>PAN CARD</h3>
+    <ul>
+      <li>Aadhaar Card</li>
+      <li>Photo</li>
+      <li>Aadhaar Linked Mobile Number</li>
+    </ul>
+    <input type="text" id="panName" placeholder="Full Name">
+    <input type="text" id="panMobile" placeholder="Mobile Number">
+    <button class="submit-btn" onclick="submitPanForm()">Submit</button>
+  </div>
+
+  <div class="form-box" id="apaarForm">
+    <h3>APAAR ID</h3>
+    <ul>
+      <li>Digilocker Credentials</li>
+      <li>Latest Marksheet & Certificates</li>
+    </ul>
+    <input type="text" id="apaarName" placeholder="Student Name">
+    <input type="text" id="apaarInstitute" placeholder="Institute Name">
+    <button class="submit-btn" onclick="submitApaarForm()">Submit</button>
+  </div>
+
+  <div class="form-box" id="rationForm">
+    <h3>RATION CARD</h3>
+    <ul>
+      <li>Income Certificate</li>
+      <li>Passport Size Photo</li>
+      <li>Aadhaar Card of all Family Members</li>
+      <li>Bank Passbook</li>
+      <li>Mobile Number</li>
+    </ul>
+    <input type="text" id="rationName" placeholder="Head of Family Name">
+    <input type="text" id="rationMobile" placeholder="Mobile Number">
+    <button class="submit-btn" onclick="submitRationForm()">Submit</button>
+  </div>
+
+  <div class="form-box" id="certificateForm">
+    <h3>INCOME/CASTE/DOMICILE CERTIFICATE</h3>
+    <ul>
+      <li>Aadhaar Card</li>
+      <li>House Tax</li>
+      <li>Electricity Bill</li>
+      <li>Previous Certificate</li>
+    </ul>
+    <input type="text" id="certificateName" placeholder="Applicant Name">
+    <input type="text" id="certificateMobile" placeholder="Mobile Number">
+    <button class="submit-btn" onclick="submitCertificateForm()">Submit</button>
+  </div>
+</div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="About">
+
+    <div class="about-text">
+      <h2>Why Choose Us?</h2>
+      <p>YOUR ONLINE CYBER CAFE provides trusted and fast digital services with smooth online support.</p>
+      <p>We help students, job seekers and local customers with all kinds of online work and documentation support.</p>
+      <p>Friendly support and quick service make us the perfect choice for your daily online needs.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-box">
+    <h2>Visit Our Cyber Cafe</h2>
+    <p>
+      <svg xmlns="http://www.w3.org/2000/svg"
+width="22"
+height="22"
+viewBox="0 0 24 24"
+fill="#E1306C"
+style="vertical-align:middle;margin-right:8px;">
+<path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.33 4 20 5.67 20 7.75v8.5C20 18.33 18.33 20 16.25 20h-8.5C5.67 20 4 18.33 4 16.25v-8.5C4 5.67 5.67 4 7.75 4zm8.75 1a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+</svg>
+      hers__harshit_01
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 YOUR ONLINE CYBER CAFE | All Rights Reserved
+</footer>
+
+<style>
+.documents-section{
+  display:none;
+  margin-top:40px;
+  background:#111827;
+  padding:30px;
+  border-radius:20px;
+}
+
+.doc-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.doc-btn{
+  background:#38bdf8;
+  color:#0f172a;
+  border:none;
+  padding:14px 20px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.form-box{
+  display:none;
+  background:#1e293b;
+  padding:25px;
+  border-radius:18px;
+  margin-top:20px;
+}
+
+.form-box h3{
+  color:#38bdf8;
+  margin-bottom:15px;
+}
+
+.form-box ul{
+  padding-left:20px;
+  color:#cbd5e1;
+  margin-bottom:20px;
+  line-height:1.8;
+}
+
+.form-box input{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:none;
+  border-radius:10px;
+}
+
+.submit-btn{
+  background:#38bdf8;
+  color:#0f172a;
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+</style>
+
+<script>
+window.openDocumentsPage = function(){
+  document.getElementById('documentsSection').style.display='block';
+  document.getElementById('documentsSection').scrollIntoView({behavior:'smooth'});
+}
+
+function showCorrectionBox(){
+  const box = document.getElementById('correctionBox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+
+function showOnlineForms(){
+  const box = document.getElementById('onlineFormsBox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+
+function showForm(id){
+  const forms=document.querySelectorAll('.form-box');
+  forms.forEach(form=>form.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+</script>
+<script>
+
+async function submitVoterForm() {
+
+  const name =
+    document.getElementById("voterName").value;
+
+  const mobile =
+    document.getElementById("voterMobile").value;
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbz5BaLqM9VWfdPGdChKI-ONGTKdzh-UlOjSr6QcoNBVdZwow9cNX6EZq4yzx-Kd5eMsWQ/exec",
+    {
+
+      method: "POST",
+
+      body: JSON.stringify({
+
+        name: name,
+
+        mobile: mobile,
+
+        service: "Voter Card"
+
+      })
+
+    }
+  );
+
+  alert("Form Submitted");
+
+}
+
+
+async function sendFormData(name, mobile, service) {
+
+  await fetch(
+    "https://script.google.com/macros/s/AKfycbz5BaLqM9VWfdPGdChKI-ONGTKdzh-UlOjSr6QcoNBVdZwow9cNX6EZq4yzx-Kd5eMsWQ/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        name: name,
+        mobile: mobile,
+        service: service
+      })
+    }
+  );
+
+  alert("Submitted Successfully ✅");
+}
+
+async function submitPanForm() {
+  await sendFormData(
+    document.getElementById("panName").value,
+    document.getElementById("panMobile").value,
+    "PAN Card"
+  );
+}
+
+async function submitApaarForm() {
+  await sendFormData(
+    document.getElementById("apaarName").value,
+    document.getElementById("apaarInstitute").value,
+    "APAAR ID"
+  );
+}
+
+async function submitRationForm() {
+  await sendFormData(
+    document.getElementById("rationName").value,
+    document.getElementById("rationMobile").value,
+    "Ration Card"
+  );
+}
+
+async function submitCertificateForm() {
+  await sendFormData(
+    document.getElementById("certificateName").value,
+    document.getElementById("certificateMobile").value,
+    "Income/Caste/Domicile"
+  );
+}
+
+</script>
+
+</body>
+</html>
